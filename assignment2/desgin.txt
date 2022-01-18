@@ -1,0 +1,6 @@
+
+In this re-made design I want my website to have a variety of colors (I was thinking a nice soft blue for the background and perhaps a black accent but that could change). 
+I also still want to have a feature that allows a user to join with a name and exit the chat whenever they feel like it, but I still do not plan on any kind of account creation. I 
+think that this could be inplemented with some css button styling that links to a command that has the user join/leave the chat. 
+It is still unclear to me about how exactly I will be able to allow multiple people to send messeges to a website, but hopefully those questions will be answered sometime soon or 
+can be reaserched when nessesary. 
