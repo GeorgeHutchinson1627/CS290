@@ -1,1 +1,51 @@
 
+<!DOCTYPE html>
+<html lang="en-US">
+        <head>
+            <style>
+            p.a {
+                font: bold small-caps 15px Arial, Helvetica, sans-serif;
+              }
+            </style>
+            <style>
+                .myDiv {
+                    text-align: center;
+
+                  }
+                </style>
+            <meta charset="UTF-8">
+            <meta name="description" content="Second Attempt at html webpage">
+            <meta name="author" content="George Hutchinson">
+        <title> This is assignment two</title>
+    </head>
+    
+    <body style= "background-color: lightblue;">
+    
+        <table border ="2">
+            <tr>
+                <th> Join Chat </th>
+                <th> Leave Chat </th>
+            </tr>
+        </table> 
+        
+        <div class= "myDiv">   
+        <h1 style= "font-size: 2vw"> Welcome to Z-Chat</h1>
+        </div>
+        <p class="a"> The best place to chat with your friends</p>
+                 <h3> Features of Z-Chat</h3>
+                 <h4> <ul>
+                     <li>Connect with Other across the web!</li>
+                    <li> Send unlimited messeges</li>
+                    <li> Talk with as many people as you want!</li>
+                 </ul>
+                </h4>
+
+    
+                
+                   
+
+
+
+    <body>
+
+    </html>
