@@ -1,1 +1,133 @@
 
+
+<!--so I did some reaserch on w3schools about collapsible containers and I found that they are easiest to implement with some javascript-->
+
+<!DOCTYPE html>
+<html lang="en-US">
+    
+        <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <style>
+                body {
+                background-image: url("background.jpg");
+                background-color: lightblue;
+                background-size: cover;
+                }
+                @media only screen and (max-width: 600px) {
+                    body {
+                        background-size: 30%;
+                }
+                }
+
+                h1 {
+                  text-decoration: overline;
+                }
+            img{
+                position: absolute;
+                left: 810px;
+                top: 25px;  
+                z-index: -1;
+            }
+
+            p.a {
+                font: bold small-caps 15px Arial, Helvetica, sans-serif;
+                margin: 35px;
+              }
+            p.clear {
+                clear: left;
+              }
+                .myDiv {
+                    padding: 20px;
+                    line-height: 1.6;
+                    text-align: center;
+                    overflow: visible;
+
+                  }
+                  .myDiv2{
+                    width: 300px;
+                    height 100px;
+                    padding: 20px;
+                    line-height: 1.6;
+                    text-align: center;
+                    overflow: visible;
+                    border: 1px solid black;
+                    float: left;
+                  }
+                  style1 {
+                      color: blue; 
+                  }
+                  .extra style1{
+                      color: inherit;
+                  }
+
+                .collapsible {
+                    background-color: #777;
+                    cursor: pointer:
+                    padding: 20px;
+                    text-align: left;
+                    font-size: 15px;
+                }
+                .content{
+                    padding: 0 18px;
+                    display: none;
+                    overflow: hidden;
+                    background-color: #f1f1f1;
+                    width: 310px;
+                }
+                li {
+                  display: inline;
+                }
+                </style>
+            <meta charset="UTF-8">
+            <meta name="description" content="Second Attempt at html webpage">
+            <meta name="author" content="George Hutchinson">
+        <title> This is assignment three</title>
+    </head>
+    
+    <body  >
+       
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/000/602/787/small/83038926.jpg" alt="alternatetext" style="width:300px;height:300px;">
+        <ul>
+          <li><a href="#join">Join Chat</a></li>
+          <li><a href="#leave">Leave Chat</a></li>
+        </ul>
+        
+        <div class= "myDiv">   
+        <h1 style= "color: white"> Welcome to Z-Chat</h1>
+        </div>
+        <div class="myDiv2">
+        <p class="a"> The best place to chat with your friends</p>
+                 <h3> Features of Z-Chat</h3>
+                 <h4> <ul>
+                     <div class="extra" style="color:red">
+                     <li><a href="#somewhere">Connect with Other across the <style1>web</style1>!</a></li>
+                    <li> Send unlimited messeges</li>
+                    <li> Talk with as many people as you want!</li>
+                     </div>
+                 </ul>
+                </h4>
+            </div>
+        <p class="clear"> Make sure to tell all of your friends </p>
+        <button type="button" class="collapsible"> Click here for info </button>
+        <div class="content">
+            <p> Z chat is not yet fully availible please try again later</p>
+        </div>
+        <script>
+            var collapsible = document.getElementsByClassName("collapsible");
+            var i;
+            
+            for (i = 0; i < collapsible.length; i++) {
+              collapsible[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                  content.style.display = "none";
+                } else {
+                  content.style.display = "block";
+                }
+              });
+            }
+            </script>
+    <body>
+
+    </html>
