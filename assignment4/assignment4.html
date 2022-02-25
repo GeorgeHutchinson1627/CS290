@@ -49,7 +49,6 @@
                     line-height: 1.6;
                     text-align: center;
                     overflow: visible;
-                    border: 1px solid black;
                     float: left;
                   }
                   style1 {
@@ -87,46 +86,36 @@
        
         <img src="https://static.vecteezy.com/system/resources/thumbnails/000/602/787/small/83038926.jpg" alt="alternatetext" style="width:300px;height:300px;">
         <ul>
-          <li><a href="#join">Join Chat</a></li>
-          <li><a href="#leave">Leave Chat</a></li>
+          <input type="text" id="myText" value="Type Display name here">
+          <li><button onclick="myFunction()">Login</button></li>
+          <li><a href="#leave">Logout</a></li>
         </ul>
         
         <div class= "myDiv">   
         <h1 style= "color: white"> Welcome to Z-Chat</h1>
         </div>
+        <p id="logdisplay"></p>
+       
         <div class="myDiv2">
         <p class="a"> The best place to chat with your friends</p>
-                 <h3> Features of Z-Chat</h3>
-                 <h4> <ul>
+                  <h4> Features of Z-Chat</h4>
+                   <ul>
                      <div class="extra" style="color:red">
                      <li><a href="#somewhere">Connect with Other across the <style1>web</style1>!</a></li>
                     <li> Send unlimited messeges</li>
                     <li> Talk with as many people as you want!</li>
-                     </div>
-                 </ul>
+                  </ul>
+                  </div>
                 </h4>
-            </div>
-        <p class="clear"> Make sure to tell all of your friends </p>
-        <button type="button" class="collapsible"> Click here for info </button>
-        <div class="content">
-            <p> Z chat is not yet fully availible please try again later</p>
-        </div>
-        <script>
-            var collapsible = document.getElementsByClassName("collapsible");
-            var i;
-            
-            for (i = 0; i < collapsible.length; i++) {
-              collapsible[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var content = this.nextElementSibling;
-                if (content.style.display === "block") {
-                  content.style.display = "none";
-                } else {
-                  content.style.display = "block";
-                }
-              });
+           </div>
+           <script>
+            function myFunction() {
+              var x = document.getElementById("myText").value;
+              document.getElementById("logdisplay").innerHTML = x;
             }
             </script>
-    <body>
+
+            
+          </body>
 
     </html>
