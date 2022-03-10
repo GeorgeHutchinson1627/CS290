@@ -1,1 +1,4 @@
 
+At this point my website design is becoming more clear. I believe I will be using express as a framework for transmitting data as I can use it to store login info. I also
+think it may be able to handle to text chat aswell. My intentions is to continue using the design format of the previous assignments but when the user logs in it takes them from the
+homepage to the text-messeging page. It should display their username, but I am still having trouble figuring out how to get a messeging system to work.
