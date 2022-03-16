@@ -11,51 +11,7 @@
 				padding: 0;
 			}
 		
-			.header-area {
-				height: 6%;
-				background: black;
-				color: white;
-				padding: 4px;
-			}
-			
-			.message-area {
-				height: 80%;
-				padding: 3px;
-				overflow: auto;
-			}
-			
-			.typing-area {
-				margin-top: 4px;
-				padding: 4px;
-				height: 8%;
-			}
-			
-			.typing-box {
-				width: 90%;
-				height: 100%;
-				resize: none;
-				padding: 3px;
-			}
-			
-			.send-button {
-				border: 0;
-				width: 9%;
-				background: black;
-				color: white;
-				padding: 8px;
-				font-size: 18px;
-				position: absolute;
-				margin: 8px;
-			}
-			
-			.message-box {
-				margin-top: 10px;
-			}
-			
-			.others-message-box {
-			}
-			
-			.my-message-box {
+			.my_message-box {
 				text-align: right;
 				background: white;
 			}
@@ -67,13 +23,13 @@
 				box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.2), 0 0 1rem rgba(0, 0, 0, 0.2);
 			}
 			
-			.my-message {
+			.my_message {
 				float: right;
 				background: black;
 				color: white;
 			}
 			
-			.others-message {
+			.others_message {
 				float: left;
 				background: white;
 			}
@@ -84,21 +40,62 @@
 				float: left;
 			}
 		
+			.header {
+				height: 6%;
+				background: black;
+				color: white;
+				padding: 4px;
+			}
+			
+			.message_area {
+				height: 80%;
+				padding: 3px;
+				overflow: auto;
+			}
+			
+			.typing_area {
+				margin-top: 4px;
+				padding: 4px;
+				height: 8%;
+			}
+			
+			.typing_box {
+				width: 90%;
+				height: 100%;
+				resize: none;
+				padding: 3px;
+			}
+			
+			.send_button {
+				border: 0;
+				width: 9%;
+				background: black;
+				color: white;
+				padding: 8px;
+				font-size: 18px;
+				position: absolute;
+				margin: 8px;
+			}
+			
+			.message_box {
+				margin-top: 10px;
+			}
+			
+			.others_message-box {
+			}
+			
+			
 		</style>
 	</head>
-	
 	<body>
-	
-		<div class="header-area">
+		<div class="header">
 			<h1> Z-chat </h1>
 		</div>
-		
-		<div class="message-area" id="message-area">
+		<div class="message_area" id="message_area">
 		</div>
-		
-		<div class="typing-area">
-			<textarea class="typing-box" id="typing-box"></textarea>
-			<button class="send-button" onclick="sendMessage()"> Send </button>
+		<div class="typing_area">
+			<textarea class="typing_box" id="typing_box"></textarea>
+			<button class="send_button" onclick="sendMessage()"> Send </button>
 		</div>
 		<!-- Alot of this part I needed to get help on stackover/online because I had no idea how to get the client to connect to the server-->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js" integrity="sha512-v8ng/uGxkge3d1IJuEo6dJP8JViyvms0cly9pnbfRxT6/31c3dRWxIiwGnMSWwZjHKOuY3EVmijs7k1jz/9bLA==" 
@@ -106,34 +103,30 @@
 		<script>
 			var socket;
 			window.onload = function() {
+			socket = io.connect('http://localhost:3000');
 				
-				socket = io.connect('http://localhost:3000');
-				
-				socket.on('codeboard-message-broadcasted', function(message){
-					var html_msg = '<div class="message-box others-message-box">' +
-								'<div class="message others-message"> ' + message + ' </div>' +
+			socket.on('codeboard-message-broadcasted', function(message){
+				var html_msg = '<div class="message_box others_message_box">' +
+								'<div class="message others_message"> ' + message + ' </div>' +
 								'<div class="separator"></div>' +
-							'</div>';
+								'</div>';
 							
-					document.getElementById("message-area").innerHTML += html_msg;
+					document.getElementById("message_area").innerHTML += html_msg;
 				})
 			}
-		
 			function sendMessage() {
-				var message = document.getElementById("typing-box").value;
-				var html = '<div class="message-box my-message-box">' +
-								'<div class="message my-message"> ' + message + ' </div>' +
+				var message = document.getElementById("typing_box").value;
+				var html = '<div class="message_box my_message_box">' +
+								'<div class="message my_message"> ' + message + ' </div>' +
 								'<div class="separator"></div>' +
 							'</div>';
 							
-				document.getElementById("message-area").innerHTML += html;
-				document.getElementById("typing-box").value = "";
+				document.getElementById("message_area").innerHTML += html;
+				document.getElementById("typing_box").value = "";
 				
 				socket.emit('codeboard-message', message);
 			}
 		
 		</script>
-	
 	</body>
-
 </html>
