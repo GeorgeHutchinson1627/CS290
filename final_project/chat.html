@@ -1,8 +1,7 @@
-
 <html lang="en-US">
 	<head>
 		<title>George Hutchinson's Chat </title>
-		<!--I found some nice style templates online and implemented them here-->
+		<!--I found some nice style templates online and implemented them here with some changes-->
 		<style>
 		
 			* {
@@ -97,15 +96,15 @@
 			<textarea class="typing_box" id="typing_box"></textarea>
 			<button class="send_button" onclick="sendMessage()"> Send </button>
 		</div>
-		<!-- Alot of this part I needed to get help on stackover/online because I had no idea how to get the client to connect to the server and send messeges back-->
+		<!-- Alot of this part I needed to get help on stackover/online because I had no idea how to get the client to connect to the server-->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js" integrity="sha512-v8ng/uGxkge3d1IJuEo6dJP8JViyvms0cly9pnbfRxT6/31c3dRWxIiwGnMSWwZjHKOuY3EVmijs7k1jz/9bLA==" 
 		crossorigin="anonymous"></script>
 		<script>
-			var socket;
+			var user_connection;
 			window.onload = function() {
-			socket = io.connect('http://localhost:3000');
+			user_connection = io.connect('http://localhost:3000');
 				
-			socket.on('codeboard-message-broadcasted', function(message){
+			user_connection.on('codeboard-message-broadcasted', function(message){
 				var html_msg = '<div class="message_box others_message_box">' +
 								'<div class="message others_message"> ' + message + ' </div>' +
 								'<div class="separator"></div>' +
@@ -124,7 +123,7 @@
 				document.getElementById("message_area").innerHTML += html;
 				document.getElementById("typing_box").value = "";
 				
-				socket.emit('codeboard-message', message);
+				user_connection.emit('codeboard-message', message);
 			}
 		
 		</script>
