@@ -1,1 +1,19 @@
 
+NOTICE BOTH EXPRESS AND SOCKET.IO ARE REQUIRED FOR THIS PROJECT TO WORK
+
+use npm install express 
+same for socket.io but only install the version 2.3.0
+
+This project is a simple chat server that allows you to connect to multiple forms of localhost:3000 and communicate across it. Server will need to be booted up with node server.js
+For best testing use a chrome and firefox tab. I wanted to get user authenticaion but I couldn't get it to work so I just made the chat anoynomous.
+
+
+
+2. After looking at the websites I mention at the beginning of the term I can see why so many websites have simple designs because making a colorful one look good is very hard
+and sometimes simpler is better. I most of my other critisisms of other websites such as moodle logging you out still stand because I know they needed a function somewhere that 
+times you out so they did it on purpose.
+
+3. After reviewing my own projects I saw that I tried to add color but I could not really get a design that looked good down so I just went with black and white. I did do a good
+job of avoiding walls of text but its not like my chat service really needed one. I think overall Ive learned a lot but even after a lot of work I only have the basics down.
+
+
